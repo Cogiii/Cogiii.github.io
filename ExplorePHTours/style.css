@@ -14,7 +14,7 @@
     font-family: "Poppins";
 }
 
-html, body, #fullheight {
+html, body {
     min-height: 100% !important;
     height: 100%;
     min-width: 100% !important;
@@ -112,8 +112,8 @@ nav ul > li > a:hover::before{
 .home {
     background-image: url("assets/el-nido-island-hopping-palawan-04365.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center -250px;
+    background-size:cover;
+    background-position: center;
     height: calc(100% - 80px);
     width: 100%;
     
@@ -214,4 +214,70 @@ footer a {
 }
 footer a:hover {
     color: var(--secondary-color);
+}
+
+
+
+
+
+@media only screen and (max-width: 1230px) {
+    .home > section > h1 {
+        font-size: 50px;
+    }
+    .home > section > img {
+        width: 250px;
+        margin-bottom: -50px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    nav {
+        height: 60px;
+        
+    }
+    nav a {
+        font-size: medium;
+    }
+
+    .home {
+        height: 100%;
+    }
+    .home::before {
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    nav a {
+        font-size: small;
+    }
+
+    .home > section > h1 {
+        font-size:40px;
+    }
+    .home > section > img {
+        width: 200px;
+        margin-bottom: -50px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        height: 30px;
+    }
+    nav a {
+        font-size: x-small;
+    }
+
+    nav ul {
+        margin-bottom: 10px;
+    }
+
+    .home > section > h1 {
+        font-size:40px;
+    }
+    .home > section > img {
+        width: 200px;
+        margin-bottom: -50px;
+    }
 }
