@@ -15,12 +15,6 @@ Each project listed in the portfolio contains:
 - **Technologies Used**: The programming languages and tools used to build the project.
 - **Link**: A link to the live project (if available).
 
-### Example Project:
-
-- **Project Name**: AidVocate
-- **Description**: AidVocate is a donation platform that connects donors with trusted charities. It helps organizations gain visibility and makes it easier for people to support causes they care about.
-- **Technologies Used**: JavaScript, NodeJS, MySQL, CSS
-
 ### Features
 
 - **Hover Effects**: Some interactive elements like buttons change their appearance when hovered over.
