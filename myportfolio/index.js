@@ -167,6 +167,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const projects = [
     {
+        image: "assets/projects/MyPortfolio.png",
+        name: "My Personal Website",
+        description: "A dynamic project portfolio website built using HTML, CSS, and JavaScript, showcasing various projects with interactive hover effects and responsive design.",
+        stack: "HTML, CSS &Javascript",
+        link: "/myportfolio"
+    },
+    {
         image: "assets/projects/AidVocate.png",
         name: "AidVocate",
         description: "AidVocate is a donation platform that connects donors with trusted charities. It helps organizations gain visibility and makes it easier for people to support causes they care about.",
@@ -230,6 +237,17 @@ function toggleMenu() {
 
 
 window.onload = () => {
+
+}
+
+window.onload = function() {
     home.classList.add("active")
     setTimeout(typeAffiliation, 500);
-}
+
+    const loader = document.getElementById('loader');
+    const content = document.getElementById('content');
+  
+    loader.style.display = 'none';
+    content.style.display = 'block';
+};
+  
