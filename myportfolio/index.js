@@ -236,18 +236,20 @@ function toggleMenu() {
 }
 
 
-window.onload = () => {
-
-}
 
 window.onload = function() {
+    const loader = document.getElementById('loader');
+    const content = document.getElementById('mainContent');
+  
     home.classList.add("active")
     setTimeout(typeAffiliation, 500);
 
-    const loader = document.getElementById('loader');
-    const content = document.getElementById('content');
-  
-    loader.style.display = 'none';
-    content.style.display = 'block';
+    loader.style.opacity = '0';  
+    setTimeout(() => {
+      loader.style.display = 'none';  
+      content.style.display = 'block';
+      content.classList.add('visible');
+    }, 1000);  
 };
+  
   

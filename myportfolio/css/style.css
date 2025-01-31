@@ -31,7 +31,6 @@ nav {
     width: 100%;
     height: 50px;
     align-items: center;
-    position: sticky;
 }
 
 nav h1 {
@@ -93,7 +92,7 @@ nav h1 {
 }
 
 main {
-    margin: auto;
+    margin: 40px auto;
     width: 1000px;
     height: auto;
     display: flex;
@@ -179,7 +178,6 @@ main {
     width: 100%;
 }
 .about-me > .content > .description-container {
-    margin-top: 50px;
     width: 100%;
     height: auto;
     padding: 20px 4vw;
@@ -337,7 +335,6 @@ main {
     width: 100%;
 }
 .projects > .content {
-    margin-top: 40px;
     width: inherit;
 }
 .projects > .content > h1 {
@@ -412,7 +409,6 @@ main {
     }
     .home > .content, .about-me > .content {
         width: 100%;
-        padding: 10px;
     }
     .home > .content > .right > img {
         width: 37vw;
@@ -476,6 +472,7 @@ main {
     main {
         height: 90vh;
         display: block;
+        margin-top: 20px;
     }
 
     .home > .content {
@@ -595,7 +592,6 @@ main {
     nav {
         justify-content: space-between;
         padding: 0 15px;
-        z-index: 1;
     }
     .burger {
         display: block;
@@ -663,6 +659,10 @@ main {
 
 
 
+.loader p {
+    margin-left: 15px;
+}
+
 .loader {
     position: fixed;
     top: 0;
@@ -674,20 +674,31 @@ main {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-  }
-  
-  .loader:before {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.loader:before {
     content: '';
-    border: 10px solid #f3f3f3;
     border-top: 10px solid var(--accent-color);
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
+
+#mainContent {
+    opacity: 0;
+    display: none;
+}
+  
+#mainContent.visible {
+    opacity: 1;
+    display: block;
+}
   
