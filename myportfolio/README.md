@@ -2,7 +2,7 @@
 
 Welcome to my personal project portfolio! This repository showcases a collection of projects I have worked on, demonstrating my skills and experience in web development. You can browse through the projects, view detailed descriptions, and explore the technologies used in each project.
 
-## Demo
+## Website Link
 
 You can view a live version of my portfolio [here](https://Cogiii.github.io/myportfolio).
 
