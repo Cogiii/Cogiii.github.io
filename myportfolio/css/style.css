@@ -104,7 +104,7 @@ main {
 }
 .home > .content {
     display: flex;
-    height: 150%;
+    height: 120%;
     width: 100%;
     align-items: center;
 }
