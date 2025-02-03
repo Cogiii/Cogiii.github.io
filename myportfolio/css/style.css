@@ -130,6 +130,7 @@ main {
     font-weight: bold;
     background: linear-gradient(90deg, var(--plain-color), var(--accent-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     position: relative;
@@ -345,6 +346,8 @@ main {
     text-align: center;
     font-size: 24px;
     background: linear-gradient(90deg, var(--plain-color), var(--accent-color));
+    background-clip: text;
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -387,6 +390,7 @@ main {
     font-size: 15px;
     margin: 15px 0 4px 0;
     background: linear-gradient(90deg, var(--plain-color), var(--accent-color));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;

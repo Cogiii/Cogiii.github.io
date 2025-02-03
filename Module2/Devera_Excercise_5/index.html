@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif; text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f9;
+        }
+        #quoteDisplay {
+            margin: 20px 0;
+            font-size: 1.5em; color: #333;
+            background-color: #51a5ff;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        #author {
+            font-style: italic; color: #555;
+        }
+        button {
+            padding: 10px 20px; font-size: 1em;
+            background-color: #007bff; color: white;
+            border: none;
+            border-radius: 5px; cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .copyBTN {
+            background: none;
+            padding: 10px;
+            visibility:hidden;
+        }
+        .copyBTN:hover {
+            background: #007bff;
+            padding: 10px;
+        }
+        .clipIMG {
+            width: 15px;
+        }
+    </style>
+        
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <div id="quoteDisplay">
+        <p id="quote">Click the button to get a random quote!</p>
+        <p id="author"></p>
+    </div>
+    <div class="btn-con">
+        <button id="newQuoteBtn">Get New Quote</button>
+        <button class="copyBTN"><img src="copyClip_icon.png" alt="copy" class="clipIMG"></button>
+    </div>
+
+    <script>
+        const quoteElement = document.getElementById('quote');
+        const authorElement = document.getElementById('author'); const button = document.getElementById('newQuoteBtn');
+        const copyBTN = document.querySelector(".copyBTN");
+
+        function copyQuote() {
+            const copyText = quoteElement;
+
+            navigator.clipboard.writeText(copyText.textContent);
+            
+            // Alert the copied text
+            alert("Copied the text: " + copyText.textContent);
+        }
+
+        // Function to fetch a random quote 
+        function fetchQuote() {
+            // Show loading message while fetching 
+            quoteElement.textContent = 'Loading quote...'; 
+            authorElement.textContent = '';
+
+            // Fetch all quotes from the DummyJSON API 
+            fetch('https://dummyjson.com/quotes')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Get a random quote from the list of quotes 
+                    const randomIndex = Math.floor(Math.random() * data.quotes.length);
+                    const randomQuote = data.quotes[randomIndex];
+
+                    // Display the quote and author 
+                    quoteElement.textContent = `"${randomQuote.quote}"`; 
+                    authorElement.textContent = `- ${randomQuote.author}`;
+                })
+                .catch(error => {
+                    // Handle any errors that occur during the fetch 
+                    console.error('Error fetching quote:', error);
+                    quoteElement.textContent = 'Failed to load quote. Please try again.';
+                    authorElement.textContent = '';
+                });
+        }
+
+        button.addEventListener('click', () => {
+            fetchQuote();
+            copyBTN.style.visibility = 'visible';
+        });
+        copyBTN.addEventListener('click', copyQuote)
+
+        fetchQuote();
+    </script>
+
+</body>
+</html>

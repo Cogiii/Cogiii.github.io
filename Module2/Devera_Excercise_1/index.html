@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise 1</title>
+</head>
+<body>
+    <p id="paragraph">Hello, this is a paragraph.</p>
+    <button id="btn">Click Me!</button>
+
+    <Script>
+        const btn = document.getElementById("btn");
+        const paragraph = document.getElementById("paragraph");
+
+        btn.addEventListener("click", () => {
+            paragraph.textContent = "You clicked the button!"
+        })
+    </Script>
+</body>
+</html>
