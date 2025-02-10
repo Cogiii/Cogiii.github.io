@@ -1,12 +1,10 @@
-
-
 const generateBTN = document.getElementById("generateBTN")
 const displayPass = document.getElementById("newPassword")
-const passwordText = document.getElementById("passwordText")
+const passwordText = document.querySelector(".passwordText")
 
 async function generatedPassword(length) {
    try {
-      const url = `https://password-generator-v2.p.rapidapi.com/api/password-generator?length=${length}`;
+      const url = `https://api.genratr.com/?length=${length}&uppercase&lowercase&special&numbers`;
       const options = {
          method: 'GET',
          headers: {
@@ -27,7 +25,7 @@ async function generatedPassword(length) {
       }
 
       const result = await response.json();
-      return result['generated-password'];
+      return result.password;
    } catch (error) {
       console.error(error);
       alert("An error occurred while generating the password.");
@@ -35,10 +33,11 @@ async function generatedPassword(length) {
 }
 
 
-generateBTN.addEventListener('click', () => {
+generateBTN.addEventListener('click', async () => {
    const length = document.getElementById("length").value;
 
-   const password = generatedPassword(length);
-   displayPass.textContent = password;
+   const password = await generatedPassword(length);
+   // console.log(password)
+   displayPass.textContent = password.toString();
    passwordText.style.display = 'block';
 })
