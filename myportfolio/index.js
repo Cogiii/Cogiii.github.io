@@ -198,8 +198,15 @@ const projects = [
         image: "assets/projects/POS.png",
         name: "Point of Sale (POS) System",
         description: "An application for restaurants, built with CustomTkinter and Excel, that streamlines order processing, tracks performance, and provides visual insights for menu optimization.",
-        stack: "Python, Customtkinter & Excel ",
+        stack: "Python, Customtkinter & Excel",
         link: "https://github.com/Cogiii/Order-Management-System"
+    }, 
+    {
+        image: "assets/projects/jewelry_express_website.png",
+        name: "Jewelry Express Appointment System",
+        description: "Jewelry Express is a booking appointment website designed for jewelry-related services, allowing customers to schedule consultations, repairs, or custom orders with ease.",
+        stack: "HTMl, CSS, JavaScript, & NodeJS",
+        link: "https://github.com/Cogiii/feedbackSystem"
     }
 ];
 
@@ -213,6 +220,7 @@ projects.forEach(project => {
     if (project.link !== "") {
         moreDiv = `
             <div class="more">
+                <p>Go To</p>
                 <a href="${project.link}" target="_blank"><img src="assets/icons/arrow_top_right.png" alt="Go To"></a>
             </div>
         `;
