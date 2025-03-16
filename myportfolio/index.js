@@ -164,14 +164,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+const hostname = window.location.hostname;
 const projects = [
     {
         image: "assets/projects/MyPortfolio.png",
         name: "My Personal Website",
         description: "A dynamic project portfolio website built using HTML, CSS, and JavaScript, showcasing various projects with interactive hover effects and responsive design.",
         stack: "HTML, CSS &Javascript",
-        link: "/myportfolio"
+        link: `${hostname}/myportfolio`
     },
     {
         image: "assets/projects/AidVocate.png",
